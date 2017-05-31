@@ -13,6 +13,9 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
 ADD https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash /etc/bash_completion.d/
 RUN echo ". /etc/bash_completion" >> /root/.bashrc
 
+# git global setting
+RUN git config --global core.editor 'vim -c "set fenc=utf-8"'
+
 # vim setting
 COPY .vimrc /root/
 
